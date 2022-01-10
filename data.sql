@@ -68,11 +68,3 @@ VALUES (
 	true,
 	11
 );
-VALUES (
-	4,
-	'Devimon',
-	(to_date('12/05/2017','dd/mm/yyyy')),
-	5,
-	true,
-	11
-);
