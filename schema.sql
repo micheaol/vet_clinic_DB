@@ -8,3 +8,9 @@ CREATE TABLE animals (
 	neutered BOOLEAN NOT NULL,
 	weight_kg NUMERIC NOT NULL
 );
+
+CREATE TABLE owners (
+	id SERIAL PRIMARY KEY,
+	full_name VARCHAR(50),
+	age INT NOT NULL
+);
