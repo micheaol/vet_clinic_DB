@@ -33,7 +33,7 @@ VALUES
 BEGIN;
 	UPDATE animals
 SET species_id = 2
-WHERE animal_name LIKE '%mon';
+WHERE name LIKE '%mon';
 	UPDATE animals
 SET species_id = 1
 WHERE species_id is NULL;
@@ -43,41 +43,41 @@ WHERE species_id is NULL;
 		UPDATE animals
 SET owner_id = owners.id
 FROM owners
-WHERE animal_name = 'Agumon' AND owners.full_name = 'Sam Smith';
+WHERE name = 'Agumon' AND owners.full_name = 'Sam Smith';
 		UPDATE animals
 SET owner_id = owners.id
 FROM owners
-WHERE animal_name = 'Pikachu' AND owners.full_name = 'Jennifer Orwell';
+WHERE name = 'Pikachu' AND owners.full_name = 'Jennifer Orwell';
 		UPDATE animals
 SET owner_id = owners.id
 FROM owners
-WHERE animal_name = 'Gabumon' AND owners.full_name = 'Jennifer Orwell';
+WHERE name = 'Gabumon' AND owners.full_name = 'Jennifer Orwell';
 		UPDATE animals
 SET owner_id = owners.id
 FROM owners
-WHERE animal_name = 'Devimon' AND owners.full_name = 'Bob';
+WHERE name = 'Devimon' AND owners.full_name = 'Bob';
 		UPDATE animals
 SET owner_id = owners.id
 FROM owners
-WHERE animal_name = 'Plantmon' AND owners.full_name = 'Bob';
+WHERE name = 'Plantmon' AND owners.full_name = 'Bob';
 		UPDATE animals
 SET owner_id = owners.id
 FROM owners
-WHERE animal_name = 'Charmander' AND owners.full_name = 'Melody Pond';
+WHERE name = 'Charmander' AND owners.full_name = 'Melody Pond';
 		UPDATE animals
 SET owner_id = owners.id
 FROM owners
-WHERE animal_name = 'Squirtle' AND owners.full_name = 'Melody Pond';
+WHERE name = 'Squirtle' AND owners.full_name = 'Melody Pond';
 		UPDATE animals
 SET owner_id = owners.id
 FROM owners
-WHERE animal_name = 'Blossom' AND owners.full_name = 'Melody Pond';
+WHERE name = 'Blossom' AND owners.full_name = 'Melody Pond';
 		UPDATE animals
 SET owner_id = owners.id
 FROM owners
-WHERE animal_name = 'Angemon' AND owners.full_name = 'Dean Winchester';
+WHERE name = 'Angemon' AND owners.full_name = 'Dean Winchester';
 		UPDATE animals
 SET owner_id = owners.id
 FROM owners
-WHERE animal_name = 'Boarmon' AND owners.full_name = 'Dean Winchester';
+WHERE name = 'Boarmon' AND owners.full_name = 'Dean Winchester';
 COMMIT;
