@@ -30,6 +30,14 @@ VALUES
 	('Pokemon'),
 	('Digimon');
 
+INSERT INTO vets 
+(name, age, date_of_graduation)
+
+VALUES ('William Tatcher', 45, (to_date('04/04/2020','dd/mm/yyyy'))),
+	   ('Maisy Smith', 26, (to_date('17/01/2019','dd/mm/yyyy'))),
+	   ('Stephanie Mendez', 64, (to_date('05/04/1981','dd/mm/yyyy'))),
+	   ('Jack Harkness', 38, (to_date('08/06/2008','dd/mm/yyyy')));
+
 BEGIN;
 	UPDATE animals
 SET species_id = 2
