@@ -168,3 +168,68 @@ INSERT INTO animals(
 						true,
 						17
 					);
+INSERT INTO owners (full_name, age)
+VALUES
+('Sam Smith' , 34),
+('Jennifer Orwell', 19),
+('Bob', 45),
+('Melody Pond', 77),
+('Dean Winchester', 14),
+('Jodie Whittaker', 38);
+
+INSERT INTO species (name)
+VALUES
+('Pokemon'),
+('Digimon');
+
+BEGIN;
+UPDATE animals
+SET species_id = 2
+WHERE animal_name LIKE '%mon';
+UPDATE animals
+SET species_id = 1
+WHERE species_id is NULL;
+COMMIT;
+
+BEGIN;
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE animal_name = 'Agumon' AND owners.full_name = 'Sam Smith';
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE animal_name = 'Pikachu' AND owners.full_name = 'Jennifer Orwell';
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE animal_name = 'Gabumon' AND owners.full_name = 'Jennifer Orwell';
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE animal_name = 'Devimon' AND owners.full_name = 'Bob';
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE animal_name = 'Plantmon' AND owners.full_name = 'Bob';
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE animal_name = 'Charmander' AND owners.full_name = 'Melody Pond';
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE animal_name = 'Squirtle' AND owners.full_name = 'Melody Pond';
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE animal_name = 'Blossom' AND owners.full_name = 'Melody Pond';
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE animal_name = 'Angemon' AND owners.full_name = 'Dean Winchester';
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE animal_name = 'Boarmon' AND owners.full_name = 'Dean Winchester';
+COMMIT;
