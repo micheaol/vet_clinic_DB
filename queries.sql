@@ -66,7 +66,7 @@ ROLLBACK;
 BEGIN;
 UPDATE animals
 SET species = 'digimon'
-WHERE animal_name LIKE '%mon';
+WHERE name LIKE '%mon';
 UPDATE animals
 SET species = 'pokemon'
 WHERE species is NULL;
@@ -99,12 +99,12 @@ WHERE species IN ('digimon') AND date_of_birth >= '12/05/1990'
 ::date AND date_of_birth <= '01/01/2021'::date GROUP BY id, name, date_of_birth;
 
 
-SELECT animal_name FROM animals JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name = 'Melody Pond';
-SELECT animal_name FROM animals JOIN species ON animals.species_id = species.id WHERE species.name = 'Pokemon';
-SELECT animal_name, full_name FROM animals FULL OUTER JOIN owners ON animals.owner_id = owners.id;
+SELECT name FROM animals JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name = 'Melody Pond';
+SELECT name FROM animals JOIN species ON animals.species_id = species.id WHERE species.name = 'Pokemon';
+SELECT name, full_name FROM animals FULL OUTER JOIN owners ON animals.owner_id = owners.id;
 SELECT name, COUNT(species_id) FROM species JOIN animals ON animals.species_id = species.id GROUP BY species.name;
-SELECT animal_name FROM animals JOIN owners ON animals.owner_id = owners.id JOIN species ON animals.species_id = species.id WHERE owners.full_name = 'Jennifer Orwell' AND species.name = 'Digimon';
-SELECT full_name, animal_name, escape_attempts FROM animals JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name = 'Dean Winchester' AND escape_attempts = 0;
+SELECT name FROM animals JOIN owners ON animals.owner_id = owners.id JOIN species ON animals.species_id = species.id WHERE owners.full_name = 'Jennifer Orwell' AND species.name = 'Digimon';
+SELECT full_name, name, escape_attempts FROM animals JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name = 'Dean Winchester' AND escape_attempts = 0;
 SELECT full_name, COUNT (full_name) AS number_of_animals from owners JOIN animals ON animals.owner_id = owners.id GROUP BY owners.full_name ORDER BY number_of_animals DESC LIMIT 1;
 © 2022 GitHub, Inc.
 Terms
