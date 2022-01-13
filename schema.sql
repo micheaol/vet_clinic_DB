@@ -19,6 +19,12 @@ CREATE TABLE species (
 	name VARCHAR(50)
 );
 
+CREATE TABLE vets (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50),
+	age INT,
+	date_of_graduation DATE NOT NULL);
+
 ALTER TABLE animals DROP COLUMN species;
 
 CREATE SEQUENCE animal_id
