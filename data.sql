@@ -13,7 +13,7 @@ VALUES
     (8, 'Angemon', (to_date('12/06/2005','dd/mm/yyyy')), 1, true, 45),
     (9,	'Boarmon', (to_date('07/06/2005','dd/mm/yyyy')), 7,	true, 20.4),
     (10,'Blossom', (to_date('13/10/1998','dd/mm/yyyy')), 3,	true, 17);
-	
+
 INSERT INTO owners
 	(full_name, age)
 VALUES
@@ -80,4 +80,4 @@ WHERE animal_name = 'Angemon' AND owners.full_name = 'Dean Winchester';
 SET owner_id = owners.id
 FROM owners
 WHERE animal_name = 'Boarmon' AND owners.full_name = 'Dean Winchester';
-		COMMIT;
+COMMIT;
