@@ -38,6 +38,14 @@ VALUES ('William Tatcher', 45, (to_date('04/04/2020','dd/mm/yyyy'))),
 	   ('Stephanie Mendez', 64, (to_date('05/04/1981','dd/mm/yyyy'))),
 	   ('Jack Harkness', 38, (to_date('08/06/2008','dd/mm/yyyy')));
 
+INSERT INTO specializations 
+(vets_id, species_id)
+VALUES(1, 1),
+	  (3, 1),
+	  (3, 2),
+	  (4, 2);
+
+
 BEGIN;
 	UPDATE animals
 SET species_id = 2

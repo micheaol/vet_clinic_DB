@@ -29,17 +29,16 @@ CREATE TABLE vets (
 CREATE TABLE specializations (
 	species_id INT,
 	vets_id INT,
-	speciality VARCHAR(50),
-	PRIMARY KEY (species_id, vets_id),
-	FOREIGN KEY (species_id) REFERENCES species(id) ON UPDATE CASCADE,
-	FOREIGN KEY (vets_id) REFERENCES vets(id) ON UPDATE CASCADE
+	CONSTRAINT speciesFK
+	FOREIGN KEY (species_id) REFERENCES species(id),
+	CONSTRAINT vetsFK
+	FOREIGN KEY (vets_id) REFERENCES vets(id)
 );
 
 CREATE TABLE visits (
 	animals_id INT,
 	vets_id INT,
-	speciality VARCHAR(50),
-	PRIMARY KEY (animals_id, vets_id),
+	date_visited DATE,
 	FOREIGN KEY (animals_id) REFERENCES animals(id) ON UPDATE CASCADE,
 	FOREIGN KEY (vets_id) REFERENCES vets(id) ON UPDATE CASCADE
 );
