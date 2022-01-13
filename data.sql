@@ -45,6 +45,28 @@ VALUES(1, 1),
 	  (3, 2),
 	  (4, 2);
 
+INSERT INTO visits (animals_id, vets_id, date_visited)
+VALUES 
+(1, 1, (to_date('24/05/2020','dd/mm/yyyy'))),
+(1, 3, (to_date('22/07/2020','dd/mm/yyyy'))),
+(2, 4, (to_date('02/02/2021','dd/mm/yyyy'))),
+(3, 2, (to_date('05/01/2020','dd/mm/yyyy'))),
+(3, 2, (to_date('08/03/2020','dd/mm/yyyy'))),
+(3, 2, (to_date('14/05/2020','dd/mm/yyyy'))),
+(4, 3, (to_date('04/05/2021','dd/mm/yyyy'))),
+(5, 4, (to_date('24/02/2020','dd/mm/yyyy'))),
+(6, 2, (to_date('21/12/2019','dd/mm/yyyy'))),
+(6, 1, (to_date('10/08/2020','dd/mm/yyyy'))),
+(6, 2, (to_date('07/04/2021','dd/mm/yyyy'))),
+(7, 3, (to_date('29/09/2019','dd/mm/yyyy'))),
+(1, 4, (to_date('03/10/2020','dd/mm/yyyy'))),
+(1, 4, (to_date('04/11/2020','dd/mm/yyyy'))),
+(9, 2, (to_date('24/01/2019','dd/mm/yyyy'))),
+(9, 2, (to_date('15/05/2019','dd/mm/yyyy'))),
+(9, 2, (to_date('27/02/2020','dd/mm/yyyy'))),
+(9, 2, (to_date('03/08/2020','dd/mm/yyyy'))),
+(10, 3, (to_date('24/05/2020','dd/mm/yyyy'))),
+(10, 1, (to_date('11/01/2021','dd/mm/yyyy')));
 
 BEGIN;
 	UPDATE animals
