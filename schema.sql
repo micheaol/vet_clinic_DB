@@ -35,6 +35,15 @@ CREATE TABLE specializations (
 	FOREIGN KEY (vets_id) REFERENCES vets(id) ON UPDATE CASCADE
 );
 
+CREATE TABLE visits (
+	animals_id INT,
+	vets_id INT,
+	speciality VARCHAR(50),
+	PRIMARY KEY (animals_id, vets_id),
+	FOREIGN KEY (animals_id) REFERENCES animals(id) ON UPDATE CASCADE,
+	FOREIGN KEY (vets_id) REFERENCES vets(id) ON UPDATE CASCADE
+);
+
 ALTER TABLE animals DROP COLUMN species;
 
 CREATE SEQUENCE animal_id
