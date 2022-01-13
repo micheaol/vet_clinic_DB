@@ -23,7 +23,17 @@ CREATE TABLE vets (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(50),
 	age INT,
-	date_of_graduation DATE NOT NULL);
+	date_of_graduation DATE NOT NULL
+);
+
+CREATE TABLE specializations (
+	species_id INT,
+	vets_id INT,
+	speciality VARCHAR(50),
+	PRIMARY KEY (species_id, vets_id),
+	FOREIGN KEY (species_id) REFERENCES species(id) ON UPDATE CASCADE,
+	FOREIGN KEY (vets_id) REFERENCES vets(id) ON UPDATE CASCADE
+);
 
 ALTER TABLE animals DROP COLUMN species;
 
