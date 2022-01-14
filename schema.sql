@@ -19,6 +19,30 @@ CREATE TABLE species (
 	name VARCHAR(50)
 );
 
+CREATE TABLE vets (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50),
+	age INT,
+	date_of_graduation DATE NOT NULL
+);
+
+CREATE TABLE specializations (
+	species_id INT,
+	vets_id INT,
+	CONSTRAINT speciesFK
+	FOREIGN KEY (species_id) REFERENCES species(id),
+	CONSTRAINT vetsFK
+	FOREIGN KEY (vets_id) REFERENCES vets(id)
+);
+
+CREATE TABLE visits (
+	animals_id INT,
+	vets_id INT,
+	date_visited DATE,
+	FOREIGN KEY (animals_id) REFERENCES animals(id) ON UPDATE CASCADE,
+	FOREIGN KEY (vets_id) REFERENCES vets(id) ON UPDATE CASCADE
+);
+
 ALTER TABLE animals DROP COLUMN species;
 
 CREATE SEQUENCE animal_id
