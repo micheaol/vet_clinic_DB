@@ -2,6 +2,8 @@
 
 > This is a database created for Vet clinic to manage animals inventory.
 
+![screenshot](./schema.png)
+
 
 ## Getting Started
 
